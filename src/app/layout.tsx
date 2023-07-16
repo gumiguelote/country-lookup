@@ -1,8 +1,11 @@
 import './globals.css'
-import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
+import type { Metadata } from 'next'
+import { getAllCountries } from './service/api.service'
+import { ICountry } from './interfaces/ICountry'
+import ContextClientWrapper from './components/ContextClientWrapper'
 
-const inter = Roboto({ weight:'500', subsets: ['latin'] })
+const roboto = Roboto({ weight:'500', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
@@ -12,17 +15,23 @@ export const metadata: Metadata = {
   description: 'Discover comprehensive information about countries and their flags with CountryLookup. Search, browse, and explore countries effortlessly. Start your global journey today!',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const countriesInitialState: ICountry[] = await getAllCountries();
+
   return (
     <html lang="en">
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta name="keywords" content="country lookup, country flags, country information, world countries, national flags, flag database, country search, global data, geography app"></meta>
-      <body className={inter.className}>{children}</body>
+      <body className={roboto.className}>
+      <ContextClientWrapper context={{countriesInitialState: countriesInitialState}}>
+          {children}  
+      </ContextClientWrapper>
+      </body>
     </html>
   )
 }

@@ -1,26 +1,27 @@
 'use client'
 
 import React, { memo } from 'react';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
+import { ICountry } from '@/app/interfaces/ICountry';
   
-  const ListCountryItem = ({country}: any) => {
+  const ListCountryItem = ({country}:{country: ICountry}) => {
     return (
-      <Link href={`/country-detail/${country.code}`}> 
       <li>
-        <div className='flag'>
-          <Image 
-            fill
-            placeholder={'blur'}
-            sizes='(max-width: 768px) 100vw' 
-            blurDataURL={country.flags.png} 
-            src={country.flags.png}
-            alt={country.flags.alt} 
-          />
-        </div>
-        <span>{country.name.common}</span>
+        <Link href={`/country-detail/${country.cca2}`}> 
+          <div className='flag'>
+            <Image 
+              layout="fill"
+              placeholder={'blur'}
+              sizes='(max-width: 768px) 100vw' 
+              src={country.flags.png}
+              blurDataURL={country.flags.png} 
+              alt={country.flags.alt} 
+            />
+          </div>
+          <span>{country.name.common}</span>
+        </Link>
       </li>
-    </Link>
     )
   }
 export default memo(ListCountryItem);
