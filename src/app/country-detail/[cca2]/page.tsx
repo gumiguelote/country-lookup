@@ -30,7 +30,8 @@ export default function Page ({params}: PageProps){
         alt={c.flags.alt} 
       />
         <span>{c.name.common}</span>
-      </div>))}
+      </div>
+      ))}
     </section>
   )
 }
