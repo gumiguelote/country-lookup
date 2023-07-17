@@ -8,12 +8,12 @@ import { IAppContext } from '@/app/interfaces/IAppContext';
 
 export default function Main() {
 
-  const {countriesInitialState, countriesFiltered, searchText}:IAppContext = useContext(AppContext);
+  const {countriesInitial, countriesFiltered, setCountriesFiltered} = useContext<IAppContext>(AppContext);
 
   return (
     <main>
         <ul>
-          {countriesInitialState.map((country: ICountry) => (
+          {(countriesFiltered.length === 0 ? countriesInitial : countriesFiltered ).map((country: ICountry) => (
             <ListCountryItem key={country.cca2} country={country} />
           ))}
         </ul>

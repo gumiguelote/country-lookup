@@ -20,7 +20,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const countriesInitialState: ICountry[] = await getAllCountries();
+  const countriesInitial: ICountry[] = await getAllCountries();
 
   return (
     <html lang="en">
@@ -28,7 +28,7 @@ export default async function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta name="keywords" content="country lookup, country flags, country information, world countries, national flags, flag database, country search, global data, geography app"></meta>
       <body className={roboto.className}>
-      <ContextClientWrapper context={{countriesInitialState: countriesInitialState}}>
+      <ContextClientWrapper countriesInitial={countriesInitial}>
           {children}  
       </ContextClientWrapper>
       </body>
