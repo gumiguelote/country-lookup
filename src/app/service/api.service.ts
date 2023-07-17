@@ -4,3 +4,8 @@ export const getAllCountries = async () => {
   return res.json();
 }
 
+export const getAllCca2ForSitemap = async () => {
+  const  res  = await fetch(`${process.env.NEXT_PUBLIC_APP_URL_API}/all?fields=cca2`);
+  return res.json();
+}
+
