@@ -14,8 +14,8 @@ import { ICountry } from '@/app/interfaces/ICountry';
               layout="fill"
               placeholder={'blur'}
               sizes='(max-width: 768px) 100vw' 
-              src={country.flags.png}
-              blurDataURL={country.flags.png} 
+              src={`https://flagcdn.com/w1280/${country.cca2.toLowerCase()}.png`}
+              blurDataURL={`https://flagcdn.com/w160/${country.cca2.toLowerCase()}.png`} 
               alt={country.flags.alt} 
             />
           </div>
