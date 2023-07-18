@@ -27,6 +27,7 @@ export default async function RootLayout({
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta name="keywords" content="country lookup, country flags, country information, world countries, national flags, flag database, country search, global data, geography app"></meta>
+      <meta name="google-site-verification" content="yBgJwSX8_aLqHt3FLKW716mqNjyRW1PFA4jC-ryjGH8" />
       <body className={roboto.className}>
       <ContextClientWrapper countriesInitial={countriesInitial}>
           {children}  
