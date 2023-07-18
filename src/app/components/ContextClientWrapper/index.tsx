@@ -11,9 +11,10 @@ interface ContextClientWrapperProps {
 
 export default function ContextClientWrapper({children, countriesInitial}: ContextClientWrapperProps){
   const [countriesFiltered, setCountriesFiltered] = useState<ICountry[]>([]);
+  const [searchTextContext, setSearchTextContext] = useState<string>('');
 
   return (
-    <AppContext.Provider value={{countriesInitial ,countriesFiltered, setCountriesFiltered}}>
+    <AppContext.Provider value={{countriesInitial ,countriesFiltered, setCountriesFiltered, searchTextContext, setSearchTextContext}}>
       {children}
     </AppContext.Provider>
   )

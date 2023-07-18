@@ -1,12 +1,15 @@
 import SearchInput from "../SearchInput";
 
-export default function NavBar(){
+import styles from './styles.module.css'
+
+export default function NavBar() {
   return (
-    <nav>
-      <h1>Welcome to CountryLookup</h1>
-      <p>Explore Countries and Flags Worldwide</p>
-      <small><a href='restcountries.com'>Restcountries Api</a></small>
+    <nav className={styles.navbar}>
+      <div>
+        <h1>CountryLookup</h1>
+        <p>Explore Countries and Flags Worldwide</p>
+      </div>
       <SearchInput />
-    </nav> 
-  )
+    </nav>
+  );
 }

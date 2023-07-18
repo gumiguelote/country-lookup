@@ -1,0 +1,23 @@
+
+.link{
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  justify-content: flex-start;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.flag {
+  position: relative;
+  height: 0;
+  padding-bottom: 58%;
+  overflow: hidden;
+  border-radius: 8px;
+  filter: brightness(0.89);
+
+}
+
+.flag:hover {
+  filter: brightness(1);
+}

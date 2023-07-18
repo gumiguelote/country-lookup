@@ -1,0 +1,25 @@
+.imageSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image{
+  filter: blur(2px);
+}
+
+.image:hover{
+  filter: blur(0);
+}
+
+.detailSection{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  background: #c7c7c7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

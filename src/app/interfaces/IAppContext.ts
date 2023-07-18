@@ -5,4 +5,6 @@ export interface IAppContext {
   countriesInitial: ICountry[];
   countriesFiltered: ICountry[];
   setCountriesFiltered: Dispatch<SetStateAction<ICountry[]>>;
+  searchTextContext: string;
+  setSearchTextContext: Dispatch<SetStateAction<string>>;
 }
