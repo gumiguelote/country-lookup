@@ -18,7 +18,7 @@ export default function Page({ params }: PageProps) {
   const { countriesInitial } = useContext<IAppContext>(AppContext);
 
   const country: ICountry = countriesInitial
-    .filter((country: ICountry) => country.cca2 === params.cca2)
+    .filter((country: ICountry) => country.cca2.toLowerCase() === params.cca2.toLowerCase())
     .reduce((acc, country) => {
       acc = country;
       return acc;
