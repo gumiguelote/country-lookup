@@ -5,12 +5,12 @@ interface ICountryCca2Code {
   cca2: string;
 }
 
-interface Sitemap {
+interface ISitemap {
   url: string;
   lastModified?: string | Date;
 }
 
-function returnSitemapObject(countryCode: ICountryCca2Code): Sitemap {
+function returnSitemapObject(countryCode: ICountryCca2Code): ISitemap {
   return {
     url: `${process.env.APP_URL}/country-detail/${countryCode.cca2}`,
     lastModified: new Date().toISOString()
@@ -18,7 +18,7 @@ function returnSitemapObject(countryCode: ICountryCca2Code): Sitemap {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const sitemapUrls: Sitemap[] = [];
+  const sitemapUrls: ISitemap[] = [];
   const arrayOfCca2 = await getAllCca2ForSitemap();
   
   arrayOfCca2.map((cca2Obj: ICountryCca2Code) => {

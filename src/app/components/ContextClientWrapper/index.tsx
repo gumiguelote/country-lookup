@@ -4,7 +4,7 @@ import { IAppContext } from "@/app/interfaces/IAppContext";
 import { ICountry } from "@/app/interfaces/ICountry";
 import { ReactNode, useState } from "react";
 
-interface ContextClientWrapperProps {
+type ContextClientWrapperProps = {
   children?: ReactNode;
   countriesInitial: ICountry[];
 }
