@@ -8,7 +8,7 @@ import { ICountry } from "@/app/interfaces/ICountry";
 
 import Image from "next/legacy/image";
 
-interface PageProps {
+type PageProps = {
   params: {
     cca2: string;
   };
